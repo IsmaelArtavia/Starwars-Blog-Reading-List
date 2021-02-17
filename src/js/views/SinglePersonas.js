@@ -1,15 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+
+import PropTypes from "prop-types";
 
 export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+	//console.log("casa", store.personas[0]);
+	console.log("casa", store);
 
+	//console.log("perro", Context.personas);
 	return (
 		<div className="jumbotron">
-			<h5 className="display-4">Nombre: </h5>
+			<h5 className="display-4">Name: </h5>
 			<h5 className="display-4">altura es: </h5>
 			<h6 className="display-4">Planeta natal: </h6>
 			<h6 className="display-4">Nacimiento: </h6>

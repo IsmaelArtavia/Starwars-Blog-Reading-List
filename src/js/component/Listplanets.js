@@ -10,6 +10,7 @@ const Listplanets = () => {
 	return (
 		<div className="container planets">
 			{store.planetas.map((item, i) => {
+				console.log("item", item);
 				return <PlanetCard key={i} name={item.name} />;
 			})}
 		</div>

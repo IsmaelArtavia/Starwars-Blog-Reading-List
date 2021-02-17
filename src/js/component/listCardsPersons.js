@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-
 import "../../styles/home.scss";
 import { Context } from "../store/appContext.js";
 import { PersonCard } from "../component/PersonCard.js";

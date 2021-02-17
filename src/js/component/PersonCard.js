@@ -14,7 +14,6 @@ export const PersonCard = props => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
-
 				<Link to="/single/">
 					<button>Explorar</button>
 				</Link>

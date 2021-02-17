@@ -1,0 +1,30 @@
+.cards{
+    width: 200px;
+    height: 600px;
+}
+
+
+.pHome{
+    color:red;
+}
+
+.imagen{
+    width: 70px;
+    height: 70px;
+    border-radius: 0%;
+}
+
+
+.personas, .planets{
+    display: inline-block;
+   white-space: nowrap;
+   overflow-x: scroll;
+    margin-top: 2%;
+    .card{
+        margin: 10 10px 0 3px;
+        width: 350px;
+        display: inline-block;
+        height: 400px;
+    }
+}
+  

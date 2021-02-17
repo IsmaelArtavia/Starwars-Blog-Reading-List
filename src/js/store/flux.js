@@ -3,16 +3,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			demo: [
 				{
-					title: "FIRST",
+					title: "Luke Skywalker",
+					altura: 172,
 					background: "white",
-					initial: "white"
+					initial: "white",
+					planeta: "Tatooine",
+					muerte: "34DBY",
+					nacimiento: "19ABY",
+					especie: "humano",
+					genero: "masculino",
+					peso: 73,
+					colorpelo: "rubio"
 				},
 				{
-					title: "SECOND",
+					title: "C-3PO",
+					altura: 167,
+					background: "white",
+					initial: "white",
+					planeta: "homeworld",
+					muerte: "N/A",
+					nacimiento: "112BBY",
+					especie: "robot",
+					genero: "N/A",
+					peso: 75,
+					colorpelo: "N/A"
+				},
+				{
+					title: "tercero",
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			personas: [],
+			planetas: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -20,9 +43,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+				fetch("https://www.swapi.tech/api/people/")
+					.then(res => res.json())
+					.then(data => {
+						let characters = data.results;
+						setStore({ personas: characters });
+					});
+
+				fetch("https://www.swapi.tech/api/planets/")
+					.then(res => res.json())
+					.then(data => {
+						let planets = data.results;
+						setStore({ planetas: planets });
+					});
 			},
 			changeColor: (index, color) => {
 				//get the store

@@ -71,6 +71,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			leerId(id) {
+				console.log(id);
+			},
+			addFav: fav => {
+				const data = fav;
+				setStore({
+					Acumulador: getStore().Acumulador.concat(data)
+				});
 			}
 		}
 	};

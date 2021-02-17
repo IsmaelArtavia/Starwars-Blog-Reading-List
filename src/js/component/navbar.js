@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 import { PersonCard } from "../component/PersonCard.js";
+import PropTypes from "prop-types";
 
 export const Navbar = () => {
 	let { store, actions } = useContext(Context);
@@ -30,7 +31,7 @@ export const Navbar = () => {
 						Favorites
 					</button>
 					<ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-						{store.personas.map((item, i) => {
+						{store.Acumulador.map((item, i) => {
 							return <li key={i}> {item.name} </li>;
 						})}
 					</ul>

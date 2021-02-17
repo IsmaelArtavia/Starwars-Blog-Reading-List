@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 export const SinglePlanetas = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-
+	//	console.log(params);
 	let [datosPlanetas, setDatosPlanetas] = useState({});
 
 	useEffect(() => {

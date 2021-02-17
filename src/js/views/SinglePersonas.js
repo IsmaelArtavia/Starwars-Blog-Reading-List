@@ -8,13 +8,16 @@ import PropTypes from "prop-types";
 
 export const Single = props => {
 	const { store, actions } = useContext(Context);
+
+	console.log(actions);
 	const params = useParams();
+
 	//console.log(params);
 	//console.log(store.personas);
 	//console.log(props.id);
 
 	let [datosPersonas, setDatosPersonas] = useState({});
-
+	//console.log("id persona", params.id);
 	useEffect(() => {
 		fetch(`https://www.swapi.tech/api/people/${params.id}`)
 			.then(data => data.json())

@@ -5,9 +5,25 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 export const PersonCard = props => {
+	const { store, actions } = useContext(Context);
+
 	//console.log(props.id);
-	const Like = id => {
-		console.log(id);
+	const Like = idPersonaClickeada => {
+		// store.personas.map((item, i) => {
+		// 	if (idPersonaClickeada === item.uid) {
+		// 		console.log(item.name);
+		// 	}
+		// });
+	};
+
+	const handleClick = id => {
+		let newObject = {};
+		store.personas.map(item => {
+			if (item.uid === id) {
+				newObject = { name: item.name, id: item.uid };
+				actions.addFav(newObject);
+			}
+		});
 	};
 
 	return (
@@ -28,7 +44,7 @@ export const PersonCard = props => {
 				<button
 					type="button submit"
 					onClick={() => {
-						Like(props.id);
+						handleClick(props.id);
 					}}
 					className="btn btn-outline-warning ">
 					<i className="far fa-heart" />

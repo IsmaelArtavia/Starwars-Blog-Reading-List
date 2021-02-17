@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
+import { Context } from "../store/appContext";
+import { PersonCard } from "../component/PersonCard.js";
 
 export const Navbar = () => {
+	let { store, actions } = useContext(Context);
+
+	//console.log(store.personas);
+
 	return (
 		<nav className="navbar navbar-dark bg-dark">
 			<Link to="/">
@@ -14,12 +20,9 @@ export const Navbar = () => {
 				</span>
 			</Link>
 			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
 				<div className="dropdown">
 					<button
-						className="btn btn-secondary dropdown-toggle"
+						className="btn btn-primary dropdown-toggle"
 						type="button"
 						id="dropdownMenu2"
 						data-bs-toggle="dropdown"
@@ -27,21 +30,9 @@ export const Navbar = () => {
 						Favorites
 					</button>
 					<ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-						<li>
-							<button className="dropdown-item" type="button">
-								Action
-							</button>
-						</li>
-						<li>
-							<button className="dropdown-item" type="button">
-								Another action
-							</button>
-						</li>
-						<li>
-							<button className="dropdown-item" type="button">
-								Something else here
-							</button>
-						</li>
+						{store.personas.map((item, i) => {
+							return <li key={i}> {item.name} </li>;
+						})}
 					</ul>
 				</div>
 			</div>

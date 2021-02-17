@@ -6,12 +6,12 @@ import { PlanetCard } from "../component/PlanetCard.js";
 
 const Listplanets = () => {
 	let { store, actions } = useContext(Context);
-	console.log(store.planetas);
+	//console.log(store.planetas);
 	return (
 		<div className="container planets">
 			{store.planetas.map((item, i) => {
-				console.log("item", item);
-				return <PlanetCard key={i} name={item.name} />;
+				//console.log("item", item);
+				return <PlanetCard key={i} name={item.name} id={item.uid} />;
 			})}
 		</div>
 	);

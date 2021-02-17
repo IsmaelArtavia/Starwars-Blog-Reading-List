@@ -5,11 +5,12 @@ import { PersonCard } from "../component/PersonCard.js";
 
 const listCardsPersons = () => {
 	let { store, actions } = useContext(Context);
-	console.log(store.personas);
+	//console.log(store.personas);
 	return (
 		<div className="container personas">
 			{store.personas.map((item, i) => {
-				return <PersonCard className key={i} name={item.name} />;
+				//console.log("item", item);
+				return <PersonCard className key={i} id={item.uid} name={item.name} />;
 			})}
 		</div>
 	);

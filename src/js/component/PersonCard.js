@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
@@ -6,6 +6,24 @@ import { Link } from "react-router-dom";
 
 export const PersonCard = props => {
 	const { store, actions } = useContext(Context);
+	let [propiedades, setPropiedades] = useState({});
+	let url;
+
+	store.personas.map(identificacion => {
+		if (props.id === identificacion.uid) {
+			url = identificacion.url;
+		}
+		//	console.log(url);
+	});
+
+	useEffect(() => {
+		fetch(url)
+			.then(data => data.json())
+			.then(data => {
+				let informacion = data.result.properties;
+				setPropiedades(informacion);
+			});
+	});
 
 	//console.log(props.id);
 	const Like = idPersonaClickeada => {
@@ -35,9 +53,12 @@ export const PersonCard = props => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
-				<h5 className="card-title">Gender: </h5>
-				<h5 className="card-title">Hair Color: </h5>
-				<h5 className="card-title">Eye Color: </h5>
+				<h5 className="card-title">
+					Gender:
+					{propiedades.gender}{" "}
+				</h5>
+				<h5 className="card-title">Hair Color: {propiedades.hair_color} </h5>
+				<h5 className="card-title">Eye Color: {propiedades.eye_color} </h5>
 				<Link to={`/single/${props.id}`}>
 					<button type="button" className="btn btn-outline-primary">
 						Learn More!

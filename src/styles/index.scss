@@ -2,7 +2,9 @@
     General Styles
 */
 
-
+body{
+    background-image: url("https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-25.jpg");
+}
 .cards{
     width: 200px;
     height: 600px;
@@ -21,4 +23,29 @@ height: 100%;
 
 .container1{
      column-count:1;
+}
+
+.dropdown-menu{
+         width: 180px; 
+  
+}
+
+.titulo{
+       display: block;
+    margin: 0 ;
+}
+
+.favoritos{
+      background-image:url("https://i.blogs.es/69fdcc/star-wars-saga/450_1000.jpg");
+        display: block;
+
+}
+
+.navbar {
+    background-image: url("https://3.bp.blogspot.com/-PKO25TV2fxQ/Vq4114MOAHI/AAAAAAAADgc/BXdTWw4LSTY/s1600/tai-x-wing.jpg");
+}
+
+.dropdown-menu{
+    background-image: url("https://i.pinimg.com/236x/58/c9/29/58c929623667d2ac7c98947550ee4db1.jpg");
+    color:white;
 }

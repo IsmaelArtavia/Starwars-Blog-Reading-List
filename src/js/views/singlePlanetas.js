@@ -47,27 +47,58 @@ export const SinglePlanetas = props => {
 			<div className="container">
 				<div className="row align-items-start">
 					<div className="col-2">
-						<h3>Name {datosPlanetas.name} </h3>
+						<h3>
+							Name <br />
+							<br />
+							<br />
+							{datosPlanetas.name}{" "}
+						</h3>
 					</div>
 
 					<div className="col-2">
-						<h3>Climate {datosPlanetas.climate} </h3>
+						<h3>
+							Climate <br />
+							<br />
+							<br /> {datosPlanetas.climate}{" "}
+						</h3>
 					</div>
 
 					<div className="col-2">
-						<h3> Population {datosPlanetas.population} </h3>
+						<h3>
+							{" "}
+							Population <br />
+							<br />
+							<br /> {datosPlanetas.population}{" "}
+						</h3>
 					</div>
 
 					<div className="col-2">
-						<h3> Orbital Period {datosPlanetas.orbital_period} </h3>
+						<h3>
+							{" "}
+							Orbital <br /> Period <br />
+							<br />
+							{datosPlanetas.orbital_period}{" "}
+						</h3>
 					</div>
 
 					<div className="col-2">
-						<h3> Rotation Period {datosPlanetas.rotation_period} </h3>
+						<h3>
+							{" "}
+							Rotation
+							<br /> Period <br />
+							<br />
+							{datosPlanetas.rotation_period}{" "}
+						</h3>
 					</div>
 
 					<div className="col-2">
-						<h3> Diameter {datosPlanetas.diameter} </h3>
+						<h3>
+							{" "}
+							Diameter
+							<br />
+							<br />
+							<br /> {datosPlanetas.diameter}{" "}
+						</h3>
 					</div>
 				</div>
 			</div>

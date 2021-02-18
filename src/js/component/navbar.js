@@ -16,27 +16,29 @@ export const Navbar = () => {
 				<span className="navbar-brand mb-0 h1">
 					<img
 						className="imagen"
-						src="https://1000marcas.net/wp-content/uploads/2019/12/Star-Wars-emblema.jpg"
+						src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
 					/>
 				</span>
 			</Link>
 			<div className="ml-auto btn-group dropstart">
 				<div className="dropdown">
 					<button
-						className="btn btn-primary dropdown-toggle"
+						className="btn btn-dark dropdown-toggle favoritos"
 						type="button"
 						id="dropdownMenu2"
 						data-bs-toggle="dropdown"
 						aria-expanded="false">
-						Favorites
+						Favorites: {}
+						{store.Acumulador.length}
 					</button>
 					<ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
 						{store.Acumulador.map((item, i) => {
+							//console.log("acumulador", store.Acumulador.length);
 							return (
-								<li key={i}>
+								<li key={i} className="titulo">
 									{" "}
 									{item.name}{" "}
-									<button type="button" className="btn btn-light">
+									<button type="button" className="btn btn-light basurero">
 										<i className="fas fa-trash" />
 									</button>
 								</li>

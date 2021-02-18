@@ -80,6 +80,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					Acumulador: getStore().Acumulador.concat(data)
 				});
+			},
+			deleteFav: id => {
+				setStore({
+					Acumulador: getStore().Acumulador.filter(item => item.id !== id)
+				});
 			}
 		}
 	};

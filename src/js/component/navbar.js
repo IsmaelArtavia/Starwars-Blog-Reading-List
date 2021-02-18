@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 import { PersonCard } from "../component/PersonCard.js";
 import PropTypes from "prop-types";
 
-export const Navbar = () => {
+export const Navbar = props => {
 	let { store, actions } = useContext(Context);
 
 	//console.log(store.personas);
@@ -38,7 +38,12 @@ export const Navbar = () => {
 								<li key={i} className="titulo">
 									{" "}
 									{item.name}{" "}
-									<button type="button" className="btn btn-light basurero">
+									<button
+										type="button submit"
+										onClick={() => {
+											actions.deleteFav(item.id);
+										}}
+										className="btn btn-light basurero">
 										<i className="fas fa-trash" />
 									</button>
 								</li>
@@ -49,4 +54,8 @@ export const Navbar = () => {
 			</div>
 		</nav>
 	);
+	Navbar.propTypes = {
+		name: PropTypes.string,
+		id: PropTypes.string
+	};
 };

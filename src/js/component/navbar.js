@@ -20,7 +20,7 @@ export const Navbar = () => {
 					/>
 				</span>
 			</Link>
-			<div className="ml-auto">
+			<div className="ml-auto btn-group dropstart">
 				<div className="dropdown">
 					<button
 						className="btn btn-primary dropdown-toggle"
@@ -32,7 +32,15 @@ export const Navbar = () => {
 					</button>
 					<ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
 						{store.Acumulador.map((item, i) => {
-							return <li key={i}> {item.name} </li>;
+							return (
+								<li key={i}>
+									{" "}
+									{item.name}{" "}
+									<button type="button" className="btn btn-light">
+										<i className="fas fa-trash" />
+									</button>
+								</li>
+							);
 						})}
 					</ul>
 				</div>

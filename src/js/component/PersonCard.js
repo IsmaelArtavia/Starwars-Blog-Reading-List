@@ -29,12 +29,15 @@ export const PersonCard = props => {
 	return (
 		<div className="card">
 			<img
-				src="https://static.wikia.nocookie.net/esstarwars/images/6/6f/Anakin_Skywalker_RotS.png/revision/latest/scale-to-width-down/350?cb=20160226204939"
+				src="https://insidethemagic-119e2.kxcdn.com/wp-content/uploads/2018/02/LukeSkywalker-400x200.jpg"
 				className="card-img-top"
 				alt="..."
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
+				<h5 className="card-title">Gender: </h5>
+				<h5 className="card-title">Hair Color: </h5>
+				<h5 className="card-title">Eye Color: </h5>
 				<Link to={`/single/${props.id}`}>
 					<button type="button" className="btn btn-outline-primary">
 						Learn More!
